@@ -12,8 +12,8 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-@WebServlet(value = "/hello_page")
-public class HelloPage extends HttpServlet {
+@WebServlet(value = "/", loadOnStartup = 1)
+public class LoginPage extends HttpServlet {
     @Override
     public void init() throws ServletException {
         super.init();
@@ -33,7 +33,7 @@ public class HelloPage extends HttpServlet {
             String password = req.getParameter("password");
             if (username == null || password == null) {
                 // Prompt the user for username and password
-                out.println("<form method=\"POST\" action=\"/hello_page\">");
+                out.println("<form method=\"POST\" action=\"" + req.getContextPath() + "/\">");
                 out.println("Type parameters to create MySQL connection:<p>");
                 out.println("Username: <input type=\"text\" name=\"username\"><p>");
                 out.println("Password: <input type=\"password\" name=\"password\"><p>");
@@ -50,7 +50,7 @@ public class HelloPage extends HttpServlet {
                         resp.sendRedirect(req.getContextPath() + "/projects_page");
 
                     } else {
-                        out.println("Connection failed. Please, restart and check user and password");
+                        out.println("Connection failed");
                     }
                 } catch (SQLException e) {
                     out.println("Connection failed. Please, restart and check user and password");

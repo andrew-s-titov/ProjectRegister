@@ -35,7 +35,7 @@ public class TasksPage extends HttpServlet {
         str.append("<form action=\"task_form\">");
         str.append("<button style=\"font-size:20px; width:25%\" name=\"action\" value=\"new\">Add new Task</button>");
         str.append("</form>");
-        str.append("<form action=\"ClearTasksConformationPage.html\">");
+        str.append("<form action=\"clear_tasks_confirm\">");
         str.append("<button style=\"font-size:20px; width:25%\">Clear all Tasks</button>");
         str.append("</form>");
         str.append("<form action=\"projects_page\">");

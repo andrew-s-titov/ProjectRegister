@@ -38,7 +38,7 @@ public class ProjectsPage extends HttpServlet {
         str.append("<form action=\"tasks_page\">");
         str.append("<button style=\"font-size:20px; width:25%\">Open Tasks</button>");
         str.append("</form>");
-        str.append("<form action=\"ClearProjectsConformationPage.html\">");
+        str.append("<form action=\"clear_projects_confirm\">");
         str.append("<button style=\"font-size:20px; width:25%\">Clear Projects and Tasks</button>");
         str.append("</form>");
         str.append("<form action=\"exit\">");
